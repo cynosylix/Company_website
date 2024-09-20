@@ -1,0 +1,284 @@
+"use client";
+
+import Image from "next/image";
+import React from "react";
+import {
+  Navbar,
+  Collapse,
+  Typography,
+  IconButton,
+  List,
+  ListItem,
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+} from "@material-tailwind/react";
+import {
+  ChevronDownIcon,
+  Bars3Icon,
+  XMarkIcon,
+  ChevronUpIcon,
+} from "@heroicons/react/24/outline";
+
+const nestedMenuItems = [
+  {
+    title: "Django",
+  },
+  {
+    title: "Features",
+  },
+  {
+    title: "Testimonials",
+  },
+  {
+    title: "Ecommerce",
+  },
+];
+
+function NavListMenu() {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [openNestedMenu, setOpenNestedMenu] = React.useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
+  const renderItems = nestedMenuItems.map(({ title }, key) => (
+    <a href="#" key={key}>
+      <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>{title}</MenuItem>
+    </a>
+  ));
+
+  return (
+    <React.Fragment>
+      <Menu
+        open={isMenuOpen}
+        handler={setIsMenuOpen}
+        placement="bottom"
+        allowHover={true}
+      >
+        <MenuHandler>
+          <Typography as="div" variant="small" className="font-medium"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+            <ListItem
+              style={{ borderRadius: "0" }}
+              className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900"
+              selected={isMenuOpen || isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen((cur) => !cur)}  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
+              Services
+              <ChevronDownIcon
+                strokeWidth={2.5}
+                className={`hidden h-3 w-3 transition-transform lg:block ${isMenuOpen ? "rotate-180" : ""}`}
+              />
+              <ChevronDownIcon
+                strokeWidth={2.5}
+                className={`block h-3 w-3 transition-transform lg:hidden ${isMobileMenuOpen ? "rotate-180" : ""}`}
+              />
+            </ListItem>
+          </Typography>
+        </MenuHandler>
+
+        <MenuList className="hidden rounded-xl lg:block"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+          <Menu
+            placement="right-start"
+            allowHover
+            offset={15}
+            open={openNestedMenu}
+            handler={setOpenNestedMenu}
+          >
+            <MenuHandler className="flex items-center justify-between">
+              <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                Web Development
+                <ChevronUpIcon
+                  strokeWidth={2.5}
+                  className={`h-3.5 w-3.5 transition-transform ${isMenuOpen ? "rotate-90" : ""}`}
+                />
+              </MenuItem>
+            </MenuHandler>
+            <MenuList className="rounded-xl"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+              {renderItems}
+            </MenuList>
+          </Menu>
+          <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Windows App Development</MenuItem>
+          <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>TailwindCSS</MenuItem>
+        </MenuList>
+      </Menu>
+      <div className="block lg:hidden">
+        <Collapse open={isMobileMenuOpen}>
+          <Menu
+            placement="bottom"
+            allowHover
+            offset={6}
+            open={openNestedMenu}
+            handler={setOpenNestedMenu}
+          >
+            <MenuHandler className="flex items-center justify-between">
+              <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                Web App Development
+                <ChevronUpIcon
+                  strokeWidth={2.5}
+                  className={`h-3.5 w-3.5 transition-transform ${isMenuOpen ? "rotate-90" : ""}`}
+                />
+              </MenuItem>
+            </MenuHandler>
+            <MenuList className="block rounded-xl lg:hidden"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+              {renderItems}
+            </MenuList>
+          </Menu>
+          <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Windows App Development</MenuItem>
+          <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>TailwindCSS</MenuItem>
+        </Collapse>
+      </div>
+    </React.Fragment>
+  );
+}
+
+function NavListCourses() {
+  const [isCoursesOpen, setIsCoursesOpen] = React.useState(false);
+
+  return (
+    <Menu
+      open={isCoursesOpen}
+      handler={setIsCoursesOpen}
+      placement="bottom"
+      allowHover={true}
+    >
+      <MenuHandler>
+        <Typography as="div" variant="small" className="font-medium"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+          <ListItem
+            style={{ borderRadius: "0" }}
+            className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}          >
+            Courses
+            <ChevronDownIcon
+              strokeWidth={2.5}
+              className={`h-3 w-3 transition-transform ${isCoursesOpen ? "rotate-180" : ""}`}
+            />
+          </ListItem>
+        </Typography>
+      </MenuHandler>
+      <MenuList className="rounded-xl"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+        <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Angular</MenuItem>
+        <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>React JS</MenuItem>
+      </MenuList>
+    </Menu>
+  );
+}
+
+function NavListTraining() {
+  const [isTrainingOpen, setIsTrainingOpen] = React.useState(false);
+
+  return (
+    <Menu
+      open={isTrainingOpen}
+      handler={setIsTrainingOpen}
+      placement="bottom"
+      allowHover={true}
+    >
+      <MenuHandler>
+        <Typography as="div" variant="small" className="font-medium"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+          <ListItem
+            style={{ borderRadius: "0" }}
+            className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}          >
+            Training
+            <ChevronDownIcon
+              strokeWidth={2.5}
+              className={`h-3 w-3 transition-transform ${isTrainingOpen ? "rotate-180" : ""}`}
+            />
+          </ListItem>
+        </Typography>
+      </MenuHandler>
+      <MenuList className="rounded-xl"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+        <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Freshers</MenuItem>
+        <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Internship</MenuItem>
+      </MenuList>
+    </Menu>
+  );
+}
+
+function NavList() {
+  return (
+    <List className="mb-6 mt-4 p-0 lg:mb-0 lg:mt-0 lg:flex-row lg:p-1"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+      <Typography as="a" href="#" variant="small" color="blue-gray" className="font-medium"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+        <ListItem style={{ borderRadius: "0" }} className="flex items-center gap-2 py-2 pr-4"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+          Home
+        </ListItem>
+      </Typography>
+      <Typography as="a" href="#" variant="small" color="blue-gray" className="font-medium"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+        <ListItem style={{ borderRadius: "0" }} className="flex items-center gap-2 py-2 pr-4"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+          About Us
+        </ListItem>
+      </Typography>
+      <NavListMenu />
+      <NavListCourses />
+      <NavListTraining />
+      <Typography as="a" href="#" variant="small" color="blue-gray" className="font-medium"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+        <ListItem style={{ borderRadius: "0" }} className="flex items-center gap-2 py-2 pr-4 hover:bg-indigo-500"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+        Gallery
+        </ListItem>
+      </Typography>
+     
+      <Typography as="a" href="#" variant="small" color="blue-gray" className="font-medium"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+        <ListItem style={{ borderRadius: "0" }} className="flex items-center gap-2 py-2 pr-4 hover:bg-indigo-500"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+        Careers
+        </ListItem>
+      </Typography>
+      <Typography as="a" href="#" variant="small" color="blue-gray" className="font-medium"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+        <ListItem style={{ borderRadius: "0" }} className="flex items-center gap-2 py-2 pr-4 hover:bg-indigo-500"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+        Contact
+        </ListItem>
+      </Typography>
+      
+    </List>
+  );
+}
+
+export function NavigationbarWithDropdownMultilevelMenu() {
+  const [openNav, setOpenNav] = React.useState(false);
+
+  React.useEffect(() => {
+    window.addEventListener(
+      "resize",
+      () => window.innerWidth >= 960 && setOpenNav(false)
+    );
+  }, []);
+
+  return (
+    <Navbar
+      style={{ backgroundColor: "none", borderRadius: "0" }}
+      className="w-full mx-auto max-w-screen-3xl px-4 py-2 lg:px-8 sticky top-0 z-50"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}    >
+      <div className="flex items-center justify-between text-blue-gray-900">
+        <div className="flex items-center">
+          <Image
+            className="dark:invert"
+            src={"/logob.png"}
+            alt="Next.js logo"
+            width={50}
+            height={38}
+            priority
+          />
+          <Typography
+            as="a"
+            href="#"
+            variant="h6"
+            className="ml-2 cursor-pointer py-1.5 text-xs sm:text-sm md:text-base lg:text-lg"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}          >
+            CYNOSYLIX TECHNOLOGY
+          </Typography>
+        </div>
+        <div className="hidden lg:block">
+          <NavList />
+        </div>
+
+        <IconButton
+          variant="text"
+          className="lg:hidden"
+          onClick={() => setOpenNav(!openNav)}  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}        >
+          {openNav ? (
+            <XMarkIcon className="h-6 w-6" strokeWidth={2} />
+          ) : (
+            <Bars3Icon className="h-6 w-6" strokeWidth={2} />
+          )}
+        </IconButton>
+      </div>
+      <Collapse open={openNav}>
+        <NavList />
+      </Collapse>
+    </Navbar>
+  );
+}
