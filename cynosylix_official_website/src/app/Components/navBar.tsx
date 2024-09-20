@@ -26,13 +26,16 @@ const nestedMenuItems = [
     title: "Django",
   },
   {
-    title: "Features",
+    title: "MEAN Stack",
   },
   {
-    title: "Testimonials",
+    title: "MERN Stack",
   },
   {
-    title: "Ecommerce",
+    title: "NextJS",
+  },
+  {
+    title: "Asp.net with Angular",
   },
 ];
 
@@ -97,7 +100,20 @@ function NavListMenu() {
             </MenuList>
           </Menu>
           <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Windows App Development</MenuItem>
-          <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>TailwindCSS</MenuItem>
+          <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Artificial Intelligence Services</MenuItem>
+
+<MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Billing Software Development</MenuItem>
+<MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>ERP Software Development</MenuItem>
+
+<MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>IOS App Development</MenuItem>
+<MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Hybrid App Development</MenuItem>
+<MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Android App Development</MenuItem>
+
+<MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Embedded Solutions</MenuItem>
+<MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>IOT Applications</MenuItem>
+<MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>UI / UX Design</MenuItem>
+<MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>API Development</MenuItem>
+<MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Cloud Services</MenuItem>
         </MenuList>
       </Menu>
       <div className="block lg:hidden">
@@ -122,8 +138,22 @@ function NavListMenu() {
               {renderItems}
             </MenuList>
           </Menu>
+          <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Artificial Intelligence Services</MenuItem>
+
           <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Windows App Development</MenuItem>
-          <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>TailwindCSS</MenuItem>
+          <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Billing Software Development</MenuItem>
+          <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>ERP Software Development</MenuItem>
+
+          <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>IOS App Development</MenuItem>
+          <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Hybrid App Development</MenuItem>
+          <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Android App Development</MenuItem>
+
+          <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Embedded Solutions</MenuItem>
+          <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>IOT Applications</MenuItem>
+          <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>UI / UX Design</MenuItem>
+          <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>API Development</MenuItem>
+          <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Cloud Services</MenuItem>
+
         </Collapse>
       </div>
     </React.Fragment>
@@ -154,8 +184,26 @@ function NavListCourses() {
         </Typography>
       </MenuHandler>
       <MenuList className="rounded-xl"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+        <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>ML & AI Course</MenuItem>
+        <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Python Programming</MenuItem>
+
         <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Angular</MenuItem>
         <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>React JS</MenuItem>
+        <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>MERN Stack</MenuItem>
+        <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>MEAN Stack</MenuItem>
+        <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Python Full Stack</MenuItem>
+        <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Flutter Development</MenuItem>
+        <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>NextJS</MenuItem>
+        <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Python Data Science Course</MenuItem>
+        <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Software Testing(Manual & Automated)</MenuItem>
+
+
+        <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Robotics Course</MenuItem>
+        <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Embedded Systems</MenuItem>
+        <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Java</MenuItem>
+        <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>ASP.net Core MVC</MenuItem>
+        
+
       </MenuList>
     </Menu>
   );
