@@ -13,12 +13,12 @@ const Services: React.FC = () => {
             {[
               {
                 color: 'bg-[#FAFFF3]',
-                imgSrc: '/icons/web-developement.svg',
+                imgSrc: '/icons/web devlopment.png',
                 title: 'Web Development',
               },
               {
                 color: 'bg-[#FAFFF3]',
-                imgSrc: '/icons/ui-ux.jpg',
+                imgSrc: '/icons/ui-ux.png',
                 title: 'UI / UX Design',
               },
              
@@ -46,7 +46,7 @@ const Services: React.FC = () => {
            
               {
                 color: 'bg-[#FAFFF3]',
-                imgSrc: 'https://user-images.githubusercontent.com/2805249/64069899-8bdaa180-cc97-11e9-9b19-1a9e1a254c18.png',
+                imgSrc: '/icons/windows-app-devlopment.png',
                 title: 'Windows App Development',
               },
               {
@@ -56,7 +56,7 @@ const Services: React.FC = () => {
               },
               {
                 color: 'bg-[#FAFFF3]',
-                imgSrc: 'https://user-images.githubusercontent.com/2805249/64069899-8bdaa180-cc97-11e9-9b19-1a9e1a254c18.png',
+                imgSrc: '/icons/embeded-system.jpg',
                 title: 'Embedded Solutions',
               },
               {
@@ -66,12 +66,12 @@ const Services: React.FC = () => {
               },
               {
                 color: 'bg-[#FAFFF3]',
-                imgSrc: 'https://user-images.githubusercontent.com/2805249/64069899-8bdaa180-cc97-11e9-9b19-1a9e1a254c18.png',
+                imgSrc: '/icons/billing-softwares.png',
                 title: 'Billing Software Development',
               },
               {
                 color: 'bg-[#FAFFF3]',
-                imgSrc: 'https://user-images.githubusercontent.com/2805249/64069899-8bdaa180-cc97-11e9-9b19-1a9e1a254c18.png',
+                imgSrc: '/icons/erp-softwares.png',
                 title: 'ERP Softwares',
               },
              

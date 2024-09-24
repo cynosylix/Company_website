@@ -39,7 +39,7 @@ const AboutUs: React.FC = () => {
                     <div className="relative">
                         <img
                             className="relative w-full xl:max-w-md xl:mx-auto 2xl:origin-bottom 2xl:scale-100"
-                            src={"/Desktop - 1.png"}
+                            src={"/AboutUs.png"}
                             alt="Business Woman"
                         />
                     </div>
