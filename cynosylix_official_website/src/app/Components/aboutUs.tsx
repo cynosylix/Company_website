@@ -3,7 +3,7 @@ import React from "react";
 
 const AboutUs: React.FC = () => {
     return (
-        <section className="pt-1 pb-4 overflow-hidden bg-[#FAFFF3] dark:bg-gray-800 md:pt-2 sm:pt-6 2xl:pt-2">
+        <section id="about-us" className="pt-1 pb-4 overflow-hidden bg-[#FAFFF3] dark:bg-gray-800 md:pt-2 sm:pt-6 2xl:pt-2">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className=" grid items-center grid-cols-1 md:grid-cols-2">
                     <div>
@@ -27,12 +27,15 @@ const AboutUs: React.FC = () => {
                             <br className="block sm:hidden " />
                             <span className="ml-2 "> Ask me on</span>{" "}
                             <a
-                                href="#"
-                                title="Ask me on WhatssApp"
+                                href="https://wa.me/+918891909301"
+                                title="Ask me on WhatsApp"
                                 className="transition-all duration-200 text-[#51f761] dark:text-sky-400 hover:text-sky-600 dark:hover:text-sky-500 hover:underline"
+                                target="_blank" 
+                                rel="noopener noreferrer" // Security measure for external links
                             >
                                 WhatsApp
                             </a>
+
                         </p>
                     </div>
 

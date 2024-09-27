@@ -18,7 +18,7 @@ const Gallery: React.FC = () => {
     };
 
     return (
-        <section className="pt-4 pb-20 bg-[#FAFFF3] relative overflow-hidden">
+        <section id='gallery' className="pt-4 pb-20 bg-[#FAFFF3] relative overflow-hidden">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 className="text-1xl font-bold leading-tight text-black dark:text-white sm:text-4xl lg:text-5xl">
                     Gallery<br className="block sm:hidden" />
@@ -71,12 +71,12 @@ const Gallery: React.FC = () => {
                     </div>
                 </div>
 
-                {/* View All Button */}
                 <div className="flex justify-center mt-8">
-                    <button type="button" className="w-1/6 text-green-700 hover:text-white border-2 border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-full text-sm px-5 py-3 text-center mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">
+                    <button type="button" className="w-full sm:w-1/3 md:w-1/4 lg:w-1/6 text-green-700 hover:text-white border-2 border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-full text-sm px-5 py-3 text-center mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">
                         View All
                     </button>
                 </div>
+
 
                 {/* Modal */}
                 {isModalOpen && (

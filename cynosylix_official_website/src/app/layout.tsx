@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import {NavigationbarWithDropdownMultilevelMenu} from "./Components/navBar";
+import { Footer } from "./Components/footer";
 
 
 const geistSans = localFont({
@@ -36,6 +37,7 @@ export default function RootLayout({
       >
         <NavigationbarWithDropdownMultilevelMenu/>
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -1,12 +1,12 @@
 // import Image from "next/image";
 
 import AboutUs from "./Components/aboutUs";
-import { Footer } from "./Components/footer";
 import Gallery from "./Components/gallery";
 import Hero from "./Components/hero";
 import Services from "./Components/services";
 import WhyChooseUs from "./Components/whyChooseUs";
 import OurTechnologyForDevelopement from "./Components/OurTechnologyForDEvelopement/ourTechnologyForDevelopement"
+import ContactUs from "./Components/contactUs";
 
 
 export default function Home() {
@@ -14,11 +14,13 @@ export default function Home() {
     <div >
       <Hero />
       <AboutUs />
+      <OurTechnologyForDevelopement />
+
       <Services />
       <WhyChooseUs />
-      <OurTechnologyForDevelopement />
       <Gallery />
-      <Footer />
+      <ContactUs />
+      
       
     </div>
   );

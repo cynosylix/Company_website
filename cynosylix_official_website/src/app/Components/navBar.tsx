@@ -1,5 +1,7 @@
 "use client";
 
+
+import Link from 'next/link'; 
 import Image from "next/image";
 import React from "react";
 import {
@@ -24,18 +26,27 @@ import {
 const nestedMenuItems = [
   {
     title: "Django",
+    srcLink:'/Services/django'
   },
   {
     title: "MEAN Stack",
+    srcLink:'/Services/meanStack'
   },
   {
     title: "MERN Stack",
+    srcLink:'/Services/mernStack'
   },
   {
     title: "NextJS",
+    srcLink:'/Services/nextJS'
   },
   {
     title: "Asp.net with Angular",
+    srcLink:'/Services/asp-angular'
+  },
+  {
+    title: "PHP Core",
+    srcLink:'/Services/php-core'
   },
 ];
 
@@ -44,8 +55,35 @@ function NavListMenu() {
   const [openNestedMenu, setOpenNestedMenu] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
-  const renderItems = nestedMenuItems.map(({ title }, key) => (
-    <a href="#" key={key}>
+  const scrollToSectionService = (id: string) => {
+    const section = document.getElementById(id);
+    console.log(`Scrolling to section: ${id}`)
+    if (section) {
+      const targetPosition = section.getBoundingClientRect().top + window.scrollY;
+      const startPosition = window.scrollY;
+      const distance = targetPosition - startPosition;
+      const duration = 800; 
+      let startTime: number | null = null;
+  
+      const animation = (currentTime: number) => {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        const easing = easeInOutQuad(progress); // Custom easing function
+        window.scrollTo(0, startPosition + distance * easing);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      };
+  
+      const easeInOutQuad = (t: number) => {
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      };
+  
+      requestAnimationFrame(animation);
+    }
+  };
+
+  const renderItems = nestedMenuItems.map(({ title,srcLink }, key) => (
+    <a href={srcLink} key={key}>
       <MenuItem placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>{title}</MenuItem>
     </a>
   ));
@@ -59,7 +97,7 @@ function NavListMenu() {
         allowHover={true}
       >
         <MenuHandler>
-          <Typography as="div" variant="small" className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+          <Typography onClick={() => scrollToSectionService('services-cards')}  as="div" variant="small" className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
             <ListItem
 
               className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 hover:bg-[#0D2B1D] hover:text-white "
@@ -87,8 +125,9 @@ function NavListMenu() {
             handler={setOpenNestedMenu}
           >
             <MenuHandler className="flex items-center justify-between">
-              <MenuItem placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                Web Development
+              
+              <MenuItem  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+             Web Development
                 <ChevronUpIcon
                   strokeWidth={2.5}
                   className={`h-3.5 w-3.5 transition-transform ${isMenuOpen ? "rotate-90" : ""}`}
@@ -99,7 +138,8 @@ function NavListMenu() {
               {renderItems}
             </MenuList>
           </Menu>
-          <MenuItem placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Windows App Development</MenuItem>
+          <MenuItem placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}> 
+          <Link href="/Services/desktop-app-development">Desktop App Development</Link></MenuItem>
           <MenuItem placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Artificial Intelligence Services</MenuItem>
           <MenuItem placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Billing Software Development</MenuItem>
           <MenuItem placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>ERP Software Development</MenuItem>
@@ -139,7 +179,7 @@ function NavListMenu() {
           </Menu>
           <MenuItem placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Artificial Intelligence Services</MenuItem>
 
-          <MenuItem placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Windows App Development</MenuItem>
+          <MenuItem placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Desktop App Development</MenuItem>
           <MenuItem placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Billing Software Development</MenuItem>
           <MenuItem placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>ERP Software Development</MenuItem>
 
@@ -238,16 +278,43 @@ function NavListTraining() {
 }
 
 function NavList() {
+  
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const targetPosition = section.getBoundingClientRect().top + window.scrollY;
+      const startPosition = window.scrollY;
+      const distance = targetPosition - startPosition;
+      const duration = 800; // Duration of scrolling in milliseconds
+      let startTime: number | null = null;
+  
+      const animation = (currentTime: number) => {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        const easing = easeInOutQuad(progress); // Custom easing function
+        window.scrollTo(0, startPosition + distance * easing);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      };
+  
+      const easeInOutQuad = (t: number) => {
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      };
+  
+      requestAnimationFrame(animation);
+    }
+  };
+  
+  
   return (
     <List className="mb-6 mt-4 p-0 lg:mb-0 lg:mt-0 lg:flex-row lg:p-1" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-      <Typography as="a" href="#" variant="small" color="black" className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-        <ListItem className=" rounded  flex items-center gap-2 py-2 pr-4 transition-all  hover:bg-[#0D2B1D] hover:text-white " placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-          Home
-
+      <Typography as="a" href='/'  variant="small" color="black" className="font-medium" onClick={() => scrollToSection('home')} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+      <ListItem className=" rounded  flex items-center gap-2 py-2 pr-4 transition-all  hover:bg-[#0D2B1D] hover:text-white " placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+       Home
         </ListItem>
-
       </Typography>
-      <Typography as="a" href="#" variant="small" color="black" className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+
+      <Typography as="a"  variant="small" color="black" className="font-medium" onClick={() => scrollToSection('about-us')} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
         <ListItem className="rounded flex items-center gap-2 py-2 pr-4 hover:bg-[#0D2B1D] hover:text-white " placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
           About Us
         </ListItem>
@@ -255,20 +322,22 @@ function NavList() {
       <NavListMenu />
       <NavListCourses />
       <NavListTraining />
-      <Typography as="a" href="#" variant="small" color="black" className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+      <Typography onClick={() => scrollToSection('gallery')} as="a" href="#" variant="small" color="black" className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
         <ListItem className="rounded flex items-center gap-2 py-2 pr-4 hover:bg-[#0D2B1D] hover:text-white " placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
           Gallery
+        </ListItem>
+      </Typography>
+
+     
+      <Typography onClick={() => scrollToSection('contact-us')} as="a" href="#" variant="small" color="black" className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+        <ListItem className=" rounded flex items-center gap-2 py-2 pr-4 hover:bg-[#0D2B1D] hover:text-white " placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+          Contact
         </ListItem>
       </Typography>
 
       <Typography as="a" href="#" variant="small" color="black" className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
         <ListItem className=" rounded flex items-center gap-2 py-2 pr-4 hover:bg-[#0D2B1D] hover:text-white " placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
           Careers
-        </ListItem>
-      </Typography>
-      <Typography as="a" href="#" variant="small" color="black" className="font-medium" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-        <ListItem className=" rounded flex items-center gap-2 py-2 pr-4 hover:bg-[#0D2B1D] hover:text-white " placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-          Contact
         </ListItem>
       </Typography>
 
@@ -291,22 +360,25 @@ export function NavigationbarWithDropdownMultilevelMenu() {
       style={{ backgroundColor: "#FAFFF3", borderRadius: "0" }}
       className="w-full mx-auto max-w-screen-3xl px-4 py-2 lg:px-8 sticky top-0 z-50" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}    >
       <div className="flex items-center justify-between text-black-900">
-        <div className="flex items-center">
+     
+      <div className="flex items-center">
           <Image
             className="dark:invert"
             src={"/logob.png"}
-            alt="Next.js logo"
+            alt="Cynosylix Technology logo"
             width={50}
             height={38}
             priority
           />
+                
           <Typography
             as="a"
-            href="#"
+            href="https://cynosylix.com/"
             variant="h6"
             className=" text-black ml-2 cursor-pointer py-1.5 text-xs sm:text-sm md:text-base lg:text-lg" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}          >
-            CYNOSYLIX TECHNOLOGY
-          </Typography>
+        CYNOSYLIX TECHNOLOGY
+          </Typography>   
+
         </div>
         <div className="hidden lg:block">
           <NavList />
