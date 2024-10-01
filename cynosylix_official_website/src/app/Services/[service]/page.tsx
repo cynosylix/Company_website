@@ -5,6 +5,8 @@
 import { usePathname } from 'next/navigation';
 import { serviceContent, ServiceKeys } from '../../Services/serviceContent';
 
+
+
 const SingleService = () => {
   const pathname = usePathname();
   const lastPath = pathname?.split('/').filter(Boolean).pop();

@@ -1,3 +1,4 @@
+"use client";
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
 
@@ -21,7 +22,6 @@ const Services: React.FC = () => {
                 imgSrc: '/icons/ui-ux.png',
                 title: 'UI / UX Design',
               },
-             
               {
                 color: 'bg-[#FAFFF3]',
                 imgSrc: '/icons/apple.png',
@@ -35,7 +35,6 @@ const Services: React.FC = () => {
               {
                 color: 'bg-[#FAFFF3]',
                 imgSrc: '/icons/hybrid.png',
-
                 title: 'Hybrid App Development',
               },
               {
@@ -43,7 +42,6 @@ const Services: React.FC = () => {
                 imgSrc: '/icons/artificial-intelligence.png',
                 title: 'Artificial Intelligence Services',
               },
-           
               {
                 color: 'bg-[#FAFFF3]',
                 imgSrc: '/icons/windows-app-devlopment.png',
@@ -74,15 +72,14 @@ const Services: React.FC = () => {
                 imgSrc: '/icons/erp-softwares.png',
                 title: 'ERP Softwares',
               },
-             
             ].map((service, index) => (
               <div
                 key={index}
-                className={`flex-shrink-0 m-2 relative overflow-hidden ${service.color} rounded-lg shadow-lg h-48 flex flex-col w-full sm:w-1/2 md:w-1/3 lg:w-1/5 transition-all duration-300 hover:scale-105`}
+                className={`card-container flex-shrink-0 m-2 relative overflow-hidden ${service.color} rounded-lg shadow-lg h-48 flex flex-col w-full sm:w-1/2 md:w-1/3 lg:w-1/5 transition-all duration-300 hover:scale-105`}
               >
                 <div className="relative flex-grow flex items-center justify-center">
                   <img
-                    className="relative w-32 h-32 transition-all duration-300 hover:scale-100"
+                    className="relative w-36 h-32 transition-all duration-300 hover:scale-100 p-1"
                     src={service.imgSrc}
                     alt="Cynosylix technology"
                   />
@@ -99,6 +96,43 @@ const Services: React.FC = () => {
           </div>
         </div>
       </div>
+      <style jsx>{`
+        .card-container {
+          position: relative;
+          border-radius: 1rem;
+          overflow: hidden;
+          z-index: 1;
+        }
+        .card-container::before {
+          content: "";
+          position: absolute;
+          top: -5px;
+          left: -5px;
+          right: -5px;
+          bottom: -5px;
+          border-radius: 1rem;
+          background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2));
+          animation: rotating-border 3s linear infinite;
+          z-index: 0; /* Behind the content */
+          pointer-events: none;
+        }
+        .card-container::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 1rem;
+          background-color: inherit; /* Ensures the card background stays consistent */
+          z-index: -1; /* Behind the border */
+        }
+        @keyframes rotating-border {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      `}</style>
     </section>
   );
 };

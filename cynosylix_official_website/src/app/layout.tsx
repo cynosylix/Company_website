@@ -17,8 +17,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Cynosylix Technology",
-  description: "cynosylix.com",
+  title: "Cynosylix Technology | Best project centre in kochi",
+  description: "Discover the best project centre in Kochi, offering expert guidance and resources for successful project execution. Elevate your ideas with us today!",
   icons: {
     icon: '/logow.png',
   

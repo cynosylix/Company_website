@@ -2,6 +2,8 @@
 import React from "react";
 
 const AboutUs: React.FC = () => {
+
+    
     return (
         <section id="about-us" className="pt-1 pb-4 overflow-hidden bg-[#FAFFF3] dark:bg-gray-800 md:pt-2 sm:pt-6 2xl:pt-2">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +45,7 @@ const AboutUs: React.FC = () => {
                         <img
                             className="relative w-full xl:max-w-md xl:mx-auto 2xl:origin-bottom 2xl:scale-100"
                             src={"/AboutUs.png"}
-                            alt="Business Woman"
+                            alt="Cynosylix About Us"
                         />
                     </div>
                 </div>
