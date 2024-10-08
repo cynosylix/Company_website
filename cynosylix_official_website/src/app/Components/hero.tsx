@@ -42,7 +42,7 @@ const Hero = () => {
             {/* Button */}
             <a
               href="#"
-              className="bg-transparent text-[#FAFFF3] hover:bg-[#6B8F71] hover:text-white py-2 px-4 md:px-6 lg:px-8 rounded-full text-sm sm:text-base md:text-lg lg:text-xl font-semibold transition duration-300 ease-in-out transform hover:scale-100 hover:shadow-lg border border-[#FAFFF3]"
+              className="bg-transparent text-[#FAFFF3] hover:bg-[#6abf52] hover:text-white py-2 px-4 md:px-6 lg:px-8 rounded-full text-sm sm:text-base md:text-lg lg:text-xl font-semibold transition duration-300 ease-in-out transform hover:scale-100 hover:shadow-lg border border-[#FAFFF3]"
             >
               Academic
             </a>

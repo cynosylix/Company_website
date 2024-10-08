@@ -24,8 +24,9 @@ export default function Home() {
     <div >
  
       <Hero />
-      <AboutUs />
       <OurTechnologyForDevelopement />
+
+      <AboutUs />
 
       <Services />
       <WhyChooseUs />

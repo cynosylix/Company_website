@@ -4,8 +4,8 @@ import React from 'react';
 
 const TechnologyIcon: React.FC<{ imgSrc: string; alt: string }> = ({ imgSrc, alt }) => {
     return (
-        <div className="flex-shrink-0 m-0 ml-5">
-            <img className="w-16 h-auto" src={imgSrc} alt={alt} />
+        <div className="flex-shrink-0 mx-2 sm:mx-4">
+            <img className="w-12 h-auto sm:w-16" src={imgSrc} alt={alt} />
         </div>
     );
 };
@@ -35,22 +35,38 @@ const CloudServices = () => {
 
     return (
         <div className="w-full overflow-hidden">
-            <div className="flex items-center  animate-scroll whitespace-nowrap">
+            <div className="flex items-center animate-scroll whitespace-nowrap">
                 {duplicatedTechnologies.map((tech, index) => (
-                    <TechnologyIcon   key={index} imgSrc={tech.imgSrc} alt={tech.alt} />
+                    <TechnologyIcon key={index} imgSrc={tech.imgSrc} alt={tech.alt} />
                 ))}
             </div>
             <style jsx>{`
                 @keyframes scroll {
                     0% {
-                        transform: translateX(0); /* Start with the first image in view */
+                        transform: translateX(0);
                     }
                     100% {
-                        transform: translateX(-50%); /* Scroll half of the total length (one set of images) */
+                        transform: translateX(-50%);
                     }
                 }
+                
+                /* Default scroll speed (30s for desktop and larger devices) */
                 .animate-scroll {
-                    animation: scroll 60s linear infinite; /* Adjust time for smoothness */
+                    animation: scroll 20s linear infinite;
+                }
+
+                /* Faster scroll speed (5s) for tablets */
+                @media (max-width: 1024px) {
+                    .animate-scroll {
+                        animation-duration: 7s;
+                    }
+                }
+
+                /* Fastest scroll speed (3s) for mobile devices */
+                @media (max-width: 640px) {
+                    .animate-scroll {
+                        animation-duration: 3s;
+                    }
                 }
             `}</style>
         </div>
