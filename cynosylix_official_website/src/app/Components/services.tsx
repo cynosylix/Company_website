@@ -4,8 +4,8 @@ import React from 'react';
 const Services = () => {
   return (
     <section className="pt-10 pb-20 bg-[#345635] relative overflow-hidden min-h-screen flex items-center justify-center">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-2xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl mb-1">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
+        <h2 className="text-2xl font-bold leading-tight text-[#d1e8d5] dark:text-white sm:text-4xl lg:text-5xl mb-5">
           Services
           <br className="block sm:hidden" />
         </h2>

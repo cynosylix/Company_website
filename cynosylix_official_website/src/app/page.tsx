@@ -8,6 +8,8 @@ import WhyChooseUs from "./Components/whyChooseUs";
 import OurTechnologyForDevelopement from "./Components/OurTechnologyForDEvelopement/ourTechnologyForDevelopement"
 import ContactUs from "./Components/contactUs";
 import type { Metadata } from "next";
+import BlogSuggestion from "./Components/blog/blogSuggestion";
+import TestimonialView from "./Components/testmonial/testmonialView";
 
 export const metadata: Metadata = {
   title: "Cynosylix Technology | Best project centre in kochi",
@@ -28,9 +30,12 @@ export default function Home() {
 
       <AboutUs />
 
+
       <Services />
       <WhyChooseUs />
       <Gallery />
+      <BlogSuggestion/>
+      <TestimonialView/>
       <ContactUs />
       
       
