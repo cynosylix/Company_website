@@ -2,6 +2,7 @@
 
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from 'react';
+import GalleryAnimation from './Animations/GalleryAnimation';
 
 const Gallery: React.FC = () => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -23,7 +24,7 @@ const Gallery: React.FC = () => {
                 <h2 className="text-1xl font-bold leading-tight text-black dark:text-white sm:text-4xl lg:text-5xl">
                     Gallery<br className="block sm:hidden" />
                 </h2>
-
+                <GalleryAnimation>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
                     <div className="grid gap-4">
                         <div onClick={() => openModal("galary/Image 1.png")} className="hover-effect">
@@ -70,6 +71,7 @@ const Gallery: React.FC = () => {
                         </div>
                     </div>
                 </div>
+                </GalleryAnimation>
 
                 <div className="flex justify-center mt-8">
                     <button type="button" className="w-full sm:w-1/3 md:w-1/4 lg:w-1/6 text-green-700 hover:text-white border-2 border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-full text-sm px-5 py-3 text-center mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">

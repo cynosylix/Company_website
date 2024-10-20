@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import ServiceCardAnimation from './Animations/ServiceCardAnimation';
 
 const Services = () => {
   return (
@@ -9,7 +10,8 @@ const Services = () => {
           Services
           <br className="block sm:hidden" />
         </h2>
-        <div className="hero-section">
+        <ServiceCardAnimation>
+        <div className="hero-section ">
           <div className="card-grid gap-4 mt-5 mb-3">
             {[
               { title: 'Web Development', categories: ['Python', 'JavaScript', 'Java'], image: '/service-images/web-development.png' },
@@ -40,6 +42,7 @@ const Services = () => {
             ))}
           </div>
         </div>
+        </ServiceCardAnimation>
 
         <style jsx>{`
           :root {

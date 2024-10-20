@@ -2,29 +2,39 @@
 import React, { useEffect } from 'react';
 import KeenSlider from 'keen-slider';
 import 'keen-slider/keen-slider.min.css';
+import TestimonialAnimation from '../Animations/TestimonialAnimation';
 
 const TestimonialsSlider: React.FC = () => {
     const testimonials = [
         {
             id: 1,
-            title: "Stayin Alive",
-            content: "No, Rose, they are not breathing. And they have no arms or legs … Where are they? You know what? If we come across somebody with no arms or legs, do we bother resuscitating them?",
-            author: "Michael Scott",
+            content: "I have done my final-year internship in cynosylix technology. The faculties were well trained. Best ever training institute in Kochi, Kerala.",
+            author: "Jijo Jacob",
             rating: 5,
         },
         {
             id: 2,
-            title: "Another Testimonial",
-            content: "This is a great service! I am very satisfied.",
-            author: "Jim Halpert",
+            content: "Sessions were handled greatly, and concepts were made clear. Great with time management!",
+            author: "Naseef PT",
             rating: 5,
         },
         {
             id: 3,
-            title: "Best Experience Ever",
-            content: "I had an amazing time with this company. Highly recommended!",
-            author: "Pam Beesly",
+            content: "Good faculty and they also provide good service to clients, overall satisfied with their performance",
+            author: "Ashik Joshy",
             rating: 5,
+        },
+        {
+            id: 4,
+            content: "Here i have done my B.Tech final Year Project in embedded system. Faculties are very experienced and polite. I got so much idea regarding embedded technologies, thanks",
+            author: "Narayanadas K P",
+            rating: 5,
+        },
+        {
+            id: 5,
+            content: "The phython 3 days session is very useful for us.. It make us to understand the basics of phython.",
+            author: "SANJANA K",
+            rating: 4,
         },
     ];
 
@@ -63,7 +73,7 @@ const TestimonialsSlider: React.FC = () => {
                 <h2 className="text-2xl font-bold leading-tight text-black dark:text-white sm:text-4xl lg:text-5xl ">
                     Testimonials<br className="block sm:hidden" />
                 </h2>
-
+                <TestimonialAnimation>
                 <div className="mt-6">
                     <div id="keen-slider" className="keen-slider flex">
                         {testimonials.map((testimonial) => (
@@ -85,7 +95,6 @@ const TestimonialsSlider: React.FC = () => {
                                         </div>
 
                                         <div className="mt-4">
-                                            <p className="text-2xl font-extrabold text-[#004d00]">{testimonial.title}</p>
                                             <p className="mt-4 text-[#003300] leading-relaxed">{testimonial.content}</p>
                                         </div>
                                     </div>
@@ -134,6 +143,7 @@ const TestimonialsSlider: React.FC = () => {
                         </button>
                     </div>
                 </div>
+                </TestimonialAnimation>
             </div>
         </section>
     );

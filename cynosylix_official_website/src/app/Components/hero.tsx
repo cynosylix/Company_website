@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
+import Typewriter from './Animations/Typewriter';
 
 
 
@@ -30,8 +31,9 @@ const Hero = () => {
                 Welcome to
               </h1>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 md:ml-3 text-[#51f761]">
-                Cynosylix Technology
+                <Typewriter text="Cynosylix Technology" speed={150} />
               </h1>
+              
             </div>
 
             {/* Subheading */}
