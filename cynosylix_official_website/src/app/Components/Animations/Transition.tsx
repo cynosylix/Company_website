@@ -9,8 +9,13 @@ export default function Transition({
   children: React.ReactNode;
 }) {
   const ref = useRef(null);
-  // Change amount to 0.75 to trigger the animation when 75% of the component is in view
-  const isInView = useInView(ref, { once: true, amount: 0.60 });
+
+  // Check screen width to determine the amount for the useInView hook
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 640; // Adjust the breakpoint as needed
+  const amount = isMobile ? 0.20 : 0.60; // 25% for mobile, 60% for larger screens
+
+  // Use the dynamic amount in the useInView hook
+  const isInView = useInView(ref, { once: true, amount });
 
   return (
     <motion.div
