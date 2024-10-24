@@ -15,9 +15,10 @@
 
 
 # Next.js build output
-
+.next/
 out/
 dist/
+build/
 
 
 # Production environment variables
